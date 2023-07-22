@@ -267,6 +267,7 @@ const pets = [
       <p class="card-text">${pet.specialSkill}</p>
       <p class="card-text">${pet.type}</p>
       <p class="card-text">${pet.id} </p>
+      <button type=button id=delete-btn-pet--"${pet.id}">Delete</button>
     </div>
   </div>`
   }
@@ -378,3 +379,53 @@ form.reset();
 };
 
 form.addEventListener("submit", createPet);
+
+const eventListeners = () => {
+  filterContainer.addEventListener("click", (e) => {
+    switch (e.target.id) {
+      case "cats-btn":
+        filterPetsByType("cat");
+        break;
+      case "dinos-btn":
+        filterPetsByType("dino");
+        break;
+      case "dogs-btn":
+        filterPetsByType("dog");
+        break;
+      case "dinos-btn":
+        filterPetsByType("cat");
+        break;
+      
+      default:
+      cardsOnDom(pets)
+      break;
+    }
+
+  //add in other event listeners
+  });
+
+  formButton.addEventListener("click", (e) => {
+    petForm();
+  })
+
+  form.addEventListener("submit", createPet);
+
+  app.addEventListener("click", (e) => {
+    if (e.target.id.includes("delete-btn-pet")) {
+      const [, id] = e.target.id.split("--");
+      const index = pets.findIndex((pet) => pet.id === Number (id));
+      pets.splice(index, 1);
+      cardsOnDom(pets);
+    }
+  });
+    
+}
+
+const startApp = () => {
+  cardsOnDom(pets);
+  //form button function goes here
+  eventListeners();
+
+}
+
+startApp();

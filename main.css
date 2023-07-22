@@ -1,0 +1,11 @@
+#app {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.card {
+  margin: 1rem;
+  flex-basis: 31%;
+}
