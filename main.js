@@ -5,6 +5,7 @@ const pets = [
       color: "Green",
       specialSkill: "Gives sincere apologies.",
       type: "cat",
+      height: "5 foot 5",
       imageUrl: "http://kittentoob.com/wp-content/uploads/2015/06/funny-cat-with-a-towel.jpg",
     },
     {
@@ -243,13 +244,19 @@ const pets = [
 
   const targetingApp = document.querySelector("#app");
 
+  //targeted the div id=app in the body of the HTML file
+
   const renderToDom = (divId, html) => {
     const targetedDiv = document.querySelector(divId)
     targetedDiv.innerHTML = html 
-  }
+  };
+
+  //created a variable renderToDom that contained two parameters and started an arrow function. function defined a new variable targetedDiv that used a query selector to link to a divID
 
   const cardsOnDom = (array) => {
   let domString = "";
+
+  //defined a variable cardsOnDom that equaled an array parameter and assigned domString to "" utilizing an arrow function 
 
   for (const pet of array ) {
     domString += `<div class="card" style="width: 18rem;">
@@ -263,6 +270,8 @@ const pets = [
     </div>
   </div>`
   }
+
+  //inserted the card 
 
   renderToDom("#app", domString);
 
@@ -296,3 +305,76 @@ filterContainer.addEventListener("click", (e) => {
     break;
   }
 })
+
+const petContainer = document.querySelector ("#pet-container")
+
+petContainer.addEventListener("click", (e) => {
+  console.log("We run this!")
+});
+
+ const petForm = () => {
+  let domString = "";
+
+  domString += `
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="id">ID</label>
+      <input type="text" class="form-control mb-2" id="id" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="name">Name</label>
+      <input type="text" class="form-control mb-2" id="name" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="color">Color</label>
+      <input type="text" class="form-control mb-2" id="color" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="specialSkill">Special Skill</label>
+      <input type="text" class="form-control mb-2" id="specialSkill" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="type">Type</label>
+      <input type="text" class="form-control mb-2" id="type" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="imageUrl">Image Url</label>
+      <input type="text" class="form-control mb-2" id="imageUrl" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
+  </div>`
+
+renderToDom("#pet-container", domString)
+};
+
+const formButton = document.querySelector("#show-form-button");
+
+formButton.addEventListener("click", (e) => {
+  petForm();
+})
+
+const form = document.querySelector("form");
+
+const createPet = (e) => {
+  e.preventDefault();
+
+  const petObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#name").value, 
+    color: document.querySelector("#color").value, 
+    specialSkill: document.querySelector("#specialSkill").value, 
+    type: document.querySelector("#type").value, 
+    imageURL: document.querySelector("#imageUrl").value, 
+}
+
+console.log(petObj);
+pets.push(petObj);
+cardsOnDom(pets);
+form.reset();
+};
+
+form.addEventListener("submit", createPet);
