@@ -14,7 +14,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
       type: "dino",
-      imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg",
+      imageUrl: "https://images.immediate.co.uk/production/volatile/sites/4/2018/08/Suzhousaurus-c07b50e.jpg?quality=90&resize=700,466",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       type: "cat",
-      imageUrl: "http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg"
+      imageUrl: "https://th-thumbnailer.cdn-si-edu.com/bZAar59Bdm95b057iESytYmmAjI=/1400x1050/filters:focal(594x274:595x275)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/95/db/95db799b-fddf-4fde-91f3-77024442b92d/egypt_kitty_social.jpg"
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const pets = [
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       type: "dino",
-      imageUrl: "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg"
+      imageUrl: "https://www.montrealsciencecentre.com/sites/default/files/inline-images/2_6.png"
     },
     {
       id: 9,
@@ -86,7 +86,7 @@ const pets = [
       color: "Orange",
       specialSkill: "Can be around food without staring creepily at it.",
       type: "dino",
-      imageUrl: "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600"
+      imageUrl: "https://images.immediate.co.uk/production/volatile/sites/4/2018/05/Amargasaurus-a4f591e.jpg"
     },
     {
       id: 12,
@@ -102,7 +102,7 @@ const pets = [
       color: "Red",
       specialSkill: "Expertly quotes and recognizes dialogue from early seasons of The Simpsons.",
       type: "dog",
-      imageUrl: "http://1kjkdg1axrkd2g03cnboj761.wpengine.netdna-cdn.com/wp-content/uploads/2017/12/braydon-anderson-105552-e1512684107659.jpg"
+      imageUrl: "https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/18/768x1151/gallery-neapolitan-mastiff.jpg?resize=1200:*"
     },
     {
       id: 14,
@@ -126,7 +126,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
       type: "dino",
-      imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
+      imageUrl: "https://www.thoughtco.com/thmb/aVR8w5SHi8qfHFurkIRdQ1WeeSU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4992124733_0642432592_o-5c4228fd46e0fb00011e365a.jpg"
     },
     {
      id: 17,
@@ -134,7 +134,7 @@ const pets = [
       color: "Yellow",
       specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+      imageUrl: "https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403"
     },
     {
       id: 18,
@@ -142,7 +142,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Proficient in air guitar",
       type: "dino",
-      imageUrl: "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg"
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Male_and_female_chicken_sitting_together.jpg/220px-Male_and_female_chicken_sitting_together.jpg"
     },
     {
       id: 19,
@@ -166,7 +166,7 @@ const pets = [
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
       type: "dino",
-      imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
+      imageUrl: "https://images.immediate.co.uk/production/volatile/sites/4/2018/05/Gigantoraptor-bab277f.jpg?quality=90&resize=700,466"
     },
     {
         id: 22,
@@ -238,7 +238,7 @@ const pets = [
       color: "Red",
       specialSkill: "Doesn’t get weirded out by the word “moist.”",
       type: "dino",
-      imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+      imageUrl: "https://scx2.b-cdn.net/gfx/news/2014/achickenfrom.jpg"
     }
   ];
 
@@ -267,7 +267,7 @@ const pets = [
       <p class="card-text">${pet.specialSkill}</p>
       <p class="card-text">${pet.type}</p>
       <p class="card-text">${pet.id} </p>
-      <button type=button id=delete-btn-pet--"${pet.id}">Delete</button>
+      <button type="button" id="delete-btn-pet--${pet.id}">Delete</button>
     </div>
   </div>`
   }
@@ -380,35 +380,48 @@ form.reset();
 
 form.addEventListener("submit", createPet);
 
-const eventListeners = () => {
-  filterContainer.addEventListener("click", (e) => {
-    switch (e.target.id) {
-      case "cats-btn":
-        filterPetsByType("cat");
-        break;
-      case "dinos-btn":
-        filterPetsByType("dino");
-        break;
-      case "dogs-btn":
-        filterPetsByType("dog");
-        break;
-      case "dinos-btn":
-        filterPetsByType("cat");
-        break;
-      
-      default:
-      cardsOnDom(pets)
-      break;
-    }
+//delete
 
-  //add in other event listeners
-  });
+ const app = document.querySelector("#app");
 
-  formButton.addEventListener("click", (e) => {
-    petForm();
-  })
+ app.addEventListener("click", (e) => {
+  if (e.target.id.includes("delete-btn-pet")) {
+    const [, id] = e.target.id.split("--");
+    const index = pets.findIndex((pet) => pet.id === Number (id));
+    pets.splice(index, 1);
+    cardsOnDom(pets);
+  }
 
-  form.addEventListener("submit", createPet);
+  cardsOnDom(pets);
+});
+
+  const eventListeners = () => {
+    filterContainer.addEventListener("click", (e) => {
+      switch (e.target.id) {
+        case "cats-btn":
+          filterPetsByType("cat");
+          break;
+        case "dinos-btn":
+          filterPetsByType("dino");
+          break;
+        case "dogs-btn":
+          filterPetsByType("dog");
+          break;
+        case "dinos-btn":
+          filterPetsByType("cat");
+          break;
+        
+        default:
+        cardsOnDom(pets)
+        break;
+      }
+    });
+
+    formButton.addEventListener("click", (e) => {
+      petForm();
+    })
+
+    form.addEventListener("submit", createPet)
 
   app.addEventListener("click", (e) => {
     if (e.target.id.includes("delete-btn-pet")) {
@@ -417,15 +430,12 @@ const eventListeners = () => {
       pets.splice(index, 1);
       cardsOnDom(pets);
     }
-  });
-    
-}
+  })
+  };
 
 const startApp = () => {
   cardsOnDom(pets);
-  //form button function goes here
   eventListeners();
-
 }
 
 startApp();

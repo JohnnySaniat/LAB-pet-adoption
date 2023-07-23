@@ -8,4 +8,9 @@
 .card {
   margin: 1rem;
   flex-basis: 31%;
+  -webkit-border-radius: 0px;
+border-radius: 0px;
+background: #ecd3d1;
+-webkit-box-shadow: 12px 12px 24px #c9b3b2, -12px -12px 24px #fff3f0;
+box-shadow: 12px 12px 24px #c9b3b2, -12px -12px 24px #fff3f0;
 }
